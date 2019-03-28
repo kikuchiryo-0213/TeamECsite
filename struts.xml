@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<!--struts2の独自スタイルを無効にする設定-->
+	<constant name="struts.ui.theme" value="simple"/>
+	<package name="com.internousdev.mars.action" extends="struts-default">
+
+    <!-- 商品一覧機能＆詳細機能 -->
+    <action name="ProductDetailsAction" class="com.internousdev.mars.action.ProductDetailsAction" method="execute">
+    	<result name="success">productDetail.jsp</result>
+    	<result name="error">error.jsp</result>
+    	<result name="sessionError">error.jsp</result>
+    </action>
+    <action name="ProductListAction" class="com.internousdev.mars.action.ProductListAction" method="execute">
+    	<result name="success">productList.jsp</result>
+    	<result name="sessionError">error.jsp</result>
+    </action>
+     <!-- マイページ＆商品購入履歴 -->
+    <action name="MyPageAction" class="com.internousdev.mars.action.MyPageAction" method="execute">
+		<result name="success">mypage.jsp</result>
+		<result name="sessionError">error.jsp</result>
+    </action>
+    <action name="PurchaseHistoryAction" class="com.internousdev.mars.action.PurchaseHistoryAction" method="execute">
+		<result name="success">purchaseHistory.jsp</result>
+		<result name="sessionError">error.jsp</result>
+    </action>
+    <action name="DeletePurchaseHistoryAction" class="com.internousdev.mars.action.DeletePurchaseHistoryAction" method="execute">
+		<result name="success">purchaseHistory.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- パスワード変更機能 -->
+	 <action name="ResetPasswordAction" class="com.internousdev.mars.action.ResetPasswordAction" method="execute">
+		<result name="success">resetPassword.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="ResetPasswordConfirmAction" class="com.internousdev.mars.action.ResetPasswordConfirmAction" method="execute">
+		<result name="success">resetPasswordConfirm.jsp</result>
+		<result name="error">resetPassword.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+   	<action name="ResetPasswordCompleteAction" class="com.internousdev.mars.action.ResetPasswordCompleteAction" method="execute">
+		<result name="success">resetPasswordComplete.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- カート機能 -->
+	<action name="AddCartAction" class="com.internousdev.mars.action.AddCartAction" method="execute">
+		<result name="success">cart.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="CartAction" class="com.internousdev.mars.action.CartAction" method="execute">
+		<result name="success">cart.jsp</result>
+	</action>
+
+	 <action name="DeleteCartAction" class="com.internousdev.mars.action.DeleteCartAction" method="execute">
+		<result name="success">cart.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- 	商品検索機能 -->
+	<action name="SearchItemAction" class="com.internousdev.mars.action.SearchItemAction" method="execute">
+		<result name="success">productList.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="HomeAction" class="com.internousdev.mars.action.HomeAction" method="execute">
+		<result name="success">home.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+	<!-- 宛先情報選択機能 -->
+	<action name="SettlementConfirmAction" class="com.internousdev.mars.action.SettlementConfirmAction" method="execute">
+		<result name="success">settlementConfirm.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="login">login.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+	<!-- 宛先情報登録機能 -->
+	<action name="CreateDestinationAction" class="com.internousdev.mars.action.CreateDestinationAction" method="execute">
+	  <result name="success">createDestination.jsp</result>
+	  <result name="sessionError">error.jsp</result>
+	</action>
+	<!-- 決済完了機能 -->
+	<action name="SettlementCompleteAction" class="com.internousdev.mars.action.SettlementCompleteAction" method="execute">
+		<result name="success">settlementComplete.jsp</result>
+		<result name="error">error.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+	<action name="CreateDestinationConfirmAction" class="com.internousdev.mars.action.CreateDestinationConfirmAction" method="execute">
+	  <result name="success">createDestinationConfirm.jsp</result>
+	  <result name="error">createDestination.jsp</result>
+	  <result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="CreateDestinationCompleteAction" class="com.internousdev.mars.action.CreateDestinationCompleteAction" method="execute">
+	  <result name="success">createDestinationComplete.jsp</result>
+	  <result name="error">error.jsp</result>
+	  <result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- 新規ユーザー登録 -->
+	<action name="CreateUserAction" class="com.internousdev.mars.action.CreateUserAction" method="execute">
+	   <result name="success">createUser.jsp</result>
+	   <result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="CreateUserCompleteAction" class="com.internousdev.mars.action.CreateUserCompleteAction" method="execute">
+	   <result name="success">createUserComplete.jsp</result>
+	   <result name="error">error.jsp</result>
+	   <result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="CreateUserConfirmAction" class="com.internousdev.mars.action.CreateUserConfirmAction" method="execute">
+	    <result name="success">createUserConfirm.jsp</result>
+	    <result name="error">createUser.jsp</result>
+	    <result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- ログイン認証 -->
+	<action name="GoLoginAction" class="com.internousdev.mars.action.GoLoginAction" method="execute">
+		<result name="success">login.jsp</result>
+		<result name="error">home.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<action name="LoginAction" class="com.internousdev.mars.action.LoginAction" method="execute">
+		<result name="success">home.jsp</result>
+		<result name="error">login.jsp</result>
+		<result name="cart">cart.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	<!-- ログアウト -->
+     <action name="LogoutAction" class="com.internousdev.mars.action.LogoutAction" method="execute">
+		<result name="success">index.jsp</result>
+		<result name="error">index.jsp</result>
+		<result name="sessionError">error.jsp</result>
+	</action>
+
+	</package>
+</struts>
